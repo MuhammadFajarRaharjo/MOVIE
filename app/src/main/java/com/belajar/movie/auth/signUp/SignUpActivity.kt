@@ -1,9 +1,9 @@
 package com.belajar.movie.auth.signUp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.belajar.movie.R
 import com.belajar.movie.auth.signIn.User
 import com.belajar.movie.utils.Preferences
@@ -36,6 +36,8 @@ class SignUpActivity : AppCompatActivity() {
             email = et_email.text.toString()
             password = et_password.text.toString()
 
+            val failedCharacter = listOf('.', ',', '\\', '/', '@' ,' ')
+
             when {
                 name == "" -> {
                     et_name.error = "Masukkan Nama"
@@ -45,11 +47,11 @@ class SignUpActivity : AppCompatActivity() {
                     et_username.error = "Masukkan Username"
                     et_username.requestFocus()
                 }
-                username.indexOf(".") >= 0 -> {
-                    et_username.error = "Masukkan Username tanpa titik (.)"
+                username.indexOfAny(failedCharacter.toCharArray()) >= 0 -> {
+                    et_username.error = "Masukkan Username tanpa $failedCharacter"
                     et_username.requestFocus()
                 }
-                email == "" -> {
+                email == "" || !email.contains("@") -> {
                     et_email.error = "Masukkan Email"
                     et_email.requestFocus()
                 }
@@ -63,7 +65,7 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-        iv_back.setOnClickListener{
+        iv_back.setOnClickListener {
             onBackPressed()
         }
     }
@@ -96,12 +98,17 @@ class SignUpActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                    else -> Toast.makeText(this@SignUpActivity, "Username sudah digunakan", Toast.LENGTH_LONG).show()
+                    else -> Toast.makeText(
+                        this@SignUpActivity,
+                        "Username sudah digunakan",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(this@SignUpActivity, databaseError.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SignUpActivity, databaseError.message, Toast.LENGTH_SHORT)
+                    .show()
             }
         })
     }
