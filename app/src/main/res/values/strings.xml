@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">MOVIE</string>
+
+    <!-- Onboarding -->
+    <string name="title_now_playing">Now Playing</string>
+    <string name="title_pre_sale">Pre Sale</string>
+    <string name="title_cashless">Cashless</string>
+    <string name="subtitle_now_playing">Lebih mundah untuk mengetahui\nfilm yang sedang tayang</string>
+    <string name="subtitle_pre_sale">Tidak khawatir ketinggalan\nupdate film terbaru</string>
+    <string name="subtitle_cashless">Gunakan E-Wallet untuk\nTransaksi tiket nonton</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="save_and_next">Simpan dan Lanjutkan</string>
+    <string name="skip_upload">Upload Nanti</string>
+    <string name="welcome">Welcome</string>
+
+    <!-- Movie -->
+    <string name="title_story_board">Storyboard</string>
+    <string name="subtitle_story_board">
+        Marvel\'s The Avengers (diklasifikasikan dengan nama Marvel Avengers Assemble di Inggris dan Irlandia) atau hanya The Avengers, adalah film Amerika superhero (2012) yang diproduksi oleh Marvel Studios dan didistribusikan oleh Walt Disney Studios Motion Pictures yang mengadaptasi pada Marvel Comics dengan nama tim superhero yang sama.
+    </string>
+    <string name="played">Who\'s Played</string>
+    <string name="pilih_bangku">Pilih Bangku</string>
+    <string name="layar_bioskop">Layar Bioskop</string>
+    <string name="check_out">Checout</string>
+    <string name="empty">Empty</string>
+    <string name="booked">Booked</string>
+    <string name="selected">Selected</string>
+    <string name="when">When</string>
+    <string name="date_and_time">Date &amp; Time</string>
+    <string name="cinema">Cinema</string>
+    <string name="seat">Seat</string>
+    <string name="wallet">E-Wallet</string>
+    <string name="saldo">Saldo</string>
+    <string name="saldo_kurang">Saldo pada E-wallet kamu tidak mencukupi\nuntuk melakukan transaksi ini</string>
+    <string name="title_success">Happy Watching!</string>
+    <string name="subtitle_success">Tiket telah berhasil di beli\nselamat menonton di bisokop kesayangan anda</string>
+    <string name="history">History</string>
+    <string name="coming_soon">Coming Soon</string>
+
+    <!-- Profile -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="saldo_tersedia">Saldo Tersedia</string>
+    <string name="setting">Setting</string>
+    <string name="keep_up_to_date">Keep it up to date</string>
+    <string name="language">Language</string>
+    <string name="help">Help</string>
+
+    <!-- Ticket -->
+    <string name="todays">Today\'s</string>
+    <string name="qr_code">QR Code</string>
+    <string name="scan_qr">Scan Qr</string>
+    <string name="scaning">Silahkan melakukan scanning\npada counter tiket terdekat</string>
+
+    <!-- Button -->
+    <string name="lanjutkan">Lanjutkan</string>
+    <string name="lewati_perkenalan">Lewati Perkenalan</string>
+    <string name="mulai">Mulai</string>
+    <string name="pulih_bangku">Pilih Bangku</string>
+    <string name="beli">Beli Tiket</string>
+    <string name="batal">Batalkan</string>
+    <string name="lihat_tiket">Lihat Tiket</string>
+    <string name="home">Home</string>
+    <string name="save_new_data">Simpan Data Baru</string>
+    <string name="tutup">Tutup</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
