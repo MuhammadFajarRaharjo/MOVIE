@@ -607,7 +607,11 @@ class PilihBangkuActivity : AppCompatActivity() {
         }
 
         btn_checkout.setOnClickListener {
-            Intent(this, CheckoutActivity::class.java).putExtra("data", dataList).run { startActivity(this) }
+            Intent(this, CheckoutActivity::class.java).also{
+                it.putExtra("data", dataList)
+                    .putExtra("film", data)
+                startActivity(it)
+            }
         }
     }
 
