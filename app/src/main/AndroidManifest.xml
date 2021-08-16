@@ -33,7 +33,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".movie.HistoryActivity" />
-        <activity android:name=".profile.MyWalletActivity" />
+        <activity android:name=".profile.wallet.TopUpWalletActivity" />
+        <activity android:name=".profile.wallet.MyWalletActivity" />
         <activity android:name=".profile.EditProfileActivity" />
         <activity android:name=".movie.CheckoutSuccesActivity" />
         <activity android:name=".movie.CheckoutActivity" />

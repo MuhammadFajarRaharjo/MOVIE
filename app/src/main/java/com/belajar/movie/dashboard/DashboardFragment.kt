@@ -100,12 +100,12 @@ class DashboardFragment : Fragment() {
 
     private fun setSaldo() {
         val user: String = preferences.getValueString("username").toString()
-        dbUser.child(user).addValueEventListener(object : ValueEventListener {
+        dbUser.child(user).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 val saldo = p0.getValue(User::class.java)
                 preferences.setValue("saldo", saldo?.saldo.toString())
 
-                if (preferences.getValueString("saldo") != "") {
+                if (!preferences.getValueString("saldo").isNullOrBlank()) {
                     tv_saldo.text = currency(preferences.getValueString("saldo")!!.toDouble())
                 }
             }

@@ -1,11 +1,13 @@
 package com.belajar.movie.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.belajar.movie.R
+import com.belajar.movie.profile.wallet.MyWalletActivity
 import com.belajar.movie.utils.Preferences
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -39,5 +41,8 @@ class ProfileFragment : Fragment() {
                 .apply(RequestOptions.circleCropTransform())
                 .into(iv_picture)
         }
+
+        tv_wallet.setOnClickListener { Intent(context, MyWalletActivity::class.java).apply { startActivity(this) } }
+        tv_edit_profile.setOnClickListener { Intent(context, EditProfileActivity::class.java).apply { startActivity(this) } }
     }
 }

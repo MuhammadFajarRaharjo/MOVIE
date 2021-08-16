@@ -22,7 +22,7 @@ class MasterActivity : AppCompatActivity() {
 
         iv_dashboard.setOnClickListener{
             setFragment(dashboardFragment)
-
+            
             iv_dashboard.setImageResource(R.drawable.ic_dashboard_active)
             iv_ticket.setImageResource(R.drawable.ic_ticket_not_active)
             iv_profile.setImageResource(R.drawable.ic_profile_not_active)

@@ -48,12 +48,14 @@
 
     <!-- Profile -->
     <string name="edit_profile">Edit Profile</string>
-    <string name="my_wallet">My Wallet</string>
     <string name="saldo_tersedia">Saldo Tersedia</string>
     <string name="setting">Setting</string>
     <string name="keep_up_to_date">Keep it up to date</string>
     <string name="language">Language</string>
     <string name="help">Help</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="top_up">Top Up</string>
+    <string name="top_up_now">Top Up Sekarang</string>
 
     <!-- Ticket -->
     <string name="todays">Today\'s</string>

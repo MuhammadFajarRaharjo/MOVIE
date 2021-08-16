@@ -12,7 +12,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.belajar.movie.MasterActivity
 import com.belajar.movie.R
 import com.belajar.movie.model.Checkout
 import com.belajar.movie.model.Film

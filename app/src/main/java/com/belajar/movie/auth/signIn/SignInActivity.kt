@@ -55,7 +55,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun login(iUsername: String, iPassword: String) {
-        dbReference.child(iUsername).addValueEventListener(object : ValueEventListener{
+        dbReference.child(iUsername).addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val user = dataSnapshot.getValue(User::class.java)
 
