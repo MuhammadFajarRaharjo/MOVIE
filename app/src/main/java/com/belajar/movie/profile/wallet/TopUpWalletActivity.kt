@@ -2,7 +2,10 @@ package com.belajar.movie.profile.wallet
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.belajar.movie.R
@@ -10,6 +13,8 @@ import com.belajar.movie.utils.Preferences
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_top_up_wallet.*
+import java.text.NumberFormat
+import java.util.*
 
 class TopUpWalletActivity : AppCompatActivity() {
 
@@ -31,12 +36,27 @@ class TopUpWalletActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("User")
         preferences = Preferences(this)
         var saldo: Double = preferences.getValueString("saldo")?.toDouble() ?: 0.0
-        val etAmount = et_amount.text.toString()
+        tv_saldo.text = formatRupiah(saldo)
 
         iv_back.setOnClickListener { onBackPressed() }
 
         et_amount.addTextChangedListener {
+            object : TextWatcher {
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    reset()
+                }
+
+                override fun afterTextChanged(s: Editable?) {}
+            }
             reset()
+
         }
 
         tv_10k.setOnClickListener {
@@ -106,6 +126,8 @@ class TopUpWalletActivity : AppCompatActivity() {
         }
 
         btn_top_up_now.setOnClickListener {
+            val etAmount = et_amount.text.toString()
+            if (etAmount.isNotBlank()) amount = etAmount.toDouble()
             saldo += amount
             databaseReference.child(preferences.getValueString("username").toString())
                 .child("saldo").setValue(saldo.toString())
@@ -163,5 +185,9 @@ class TopUpWalletActivity : AppCompatActivity() {
             setBackgroundResource(R.drawable.shape_rounded_line_white)
         }
         amount = 0.0
+    }
+
+    private fun formatRupiah(number: Double): String {
+        return NumberFormat.getCurrencyInstance(Locale("id", "ID")).format(number)
     }
 }
